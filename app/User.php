@@ -2,10 +2,11 @@
 
 namespace App;
 
+use Froiden\RestAPI\ApiModel;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends ApiModel
 {
     use Notifiable;
 

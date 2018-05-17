@@ -12,7 +12,9 @@
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7"
+        "phpunit/phpunit": "~5.7",
+        "tymon/jwt-auth": "0.5.*",
+        "froiden/laravel-rest-api": "^2.0"
     },
     "autoload": {
         "classmap": [
