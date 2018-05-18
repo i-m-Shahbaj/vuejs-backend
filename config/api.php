@@ -22,7 +22,7 @@ return [
     /**
      * Which headers are allowed in CORS requests
      */
-    'cors_headers' => ['Authorization', 'Content-Type'],
+    'cors_headers' => ['Authorization', 'Content-Type','X-REQUEST-WITH'],
 
     /**
      * List of fields that should not be considered while saving a model
