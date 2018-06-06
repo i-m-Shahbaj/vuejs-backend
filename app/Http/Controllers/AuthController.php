@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
 use App\User;
+use Froiden\RestAPI\ApiController;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use App\Http\Requests\LoginRequest;
+use Froiden\RestAPI\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
@@ -48,9 +50,13 @@ class AuthController extends BaseController
         $user->password = bcrypt($request->password);
         $user->save();
 
-        $user = User::first();
-        $token = JWTAuth::fromUser($user);
-        return Response::json(compact('token'));
+        $userToken = User::first();
+        $token = JWTAuth::fromUser($userToken);
 
+        return ApiResponse::make('logged in successfully', [
+            'token' => $token,
+            'user' => $user
+        ]);
     }
+
 }
